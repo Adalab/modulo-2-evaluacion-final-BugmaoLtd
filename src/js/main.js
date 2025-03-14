@@ -13,16 +13,27 @@ const seriesList = document.querySelector(".js-list");
 
 const handleClick = (event) => {
   event.preventDefault();
+  seriesList.innerHTML = "";
   const searchInputValue = searchInput.value;
   fetch("https://api.jikan.moe/v4/anime?q=" + searchInputValue)
     .then((response) => response.json())
     .then((data) => {
       const series = data.data;
       for (const serie of series) {
-        const title = serie.title;
-        const imageUrl = serie.images.jpg.image_url;
-        console.log(title);
-        console.log(imageUrl);
+        if (
+          serie.images.jpg.image_url.src ===
+          "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
+        ) {
+          seriesList.innerHTML += ` <li>
+        <img src="./images/logo-adalab.png" alt="">
+        <h2>${serie.title}</h2>
+      </li>`;
+        } else {
+          seriesList.innerHTML += ` <li>
+          <img src="${serie.images.jpg.image_url}" alt="">
+          <h2>${serie.title}</h2>
+        </li>`;
+        }
       }
     });
 };
