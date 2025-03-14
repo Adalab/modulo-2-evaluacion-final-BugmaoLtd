@@ -9,11 +9,12 @@
 
 const searchBtn = document.querySelector(".js-searchBtn");
 const searchInput = document.querySelector(".js-searchInput");
+const seriesList = document.querySelector(".js-list");
 
 const handleClick = (event) => {
   event.preventDefault();
   const searchInputValue = searchInput.value;
-  fetch("https://api.jikan.moe/v4/anime?q=naruto")
+  fetch("https://api.jikan.moe/v4/anime?q=" + searchInputValue)
     .then((response) => response.json())
     .then((data) => {
       const series = data.data;
