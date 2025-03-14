@@ -20,6 +20,8 @@ const handleClick = (event) => {
       for (const serie of series) {
         const title = serie.title;
         const imageUrl = serie.images.jpg.image_url;
+        console.log(title);
+        console.log(imageUrl);
       }
     });
 };
