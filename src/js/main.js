@@ -14,8 +14,9 @@ const seriesList = document.querySelector(".js-list");
 
 function renderSeries(series) {
   for (const serie of series) {
+    const imageSrc = serie.images.jpg.image_url.src;
     if (
-      serie.images.jpg.image_url.src ===
+      imageSrc ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
       seriesList.innerHTML += ` <li class = "js-series serie" id="${serie.mal_id}">
