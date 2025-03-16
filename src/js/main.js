@@ -10,28 +10,29 @@
 const searchBtn = document.querySelector(".js-searchBtn");
 const searchInput = document.querySelector(".js-searchInput");
 const seriesList = document.querySelector(".js-list");
-
-let favouriteSeriesList = [];
+let favouriteSeriesList = document.querySelector(".js-favourite-series-list");
 
 function handleFavourites(event) {
-  const idSerie = parseInt(event.currentTarget.id);
+  const idSerie = event.currentTarget.id;
+  const favouriteSerie = event.currentTarget;
 
   //No me trae el valor del id de series.mal_id ni series[mal_id]
   // y por eso no funciona el find ni todo lo demás
 
-  const selectedSerie = favouriteSeriesList.find((series) => {
-    return series.mal_id === idSerie;
+  const selectedSerie = allSeries.find((singleSerie) => {
+    return singleSerie.mal_id === idSerie;
   });
 
+  let favouriteSeriesList = [];
   favouriteSeriesList.push(selectedSerie);
   // console.log(favouriteSeriesList);
 
-  for (const favouriteSerie of favouriteSeriesList) {
-    favouriteSeriesList.innerHTML += ` <li class = "js-series" id="${series.mal_id}">
-    <img src="${serie.images.jpg.image_url}" alt="">
-    <h2>${series.title}</h2>
-  </li>`;
-  }
+  // for (const favouriteSerie of favouriteSeriesList) {
+  //   favouriteSeriesList.innerHTML += ` <li class = "js-series" id="${series.mal_id}">
+  //   <img src="${serie.images.jpg.image_url}" alt="">
+  //   <h2>${series.title}</h2>
+  // </li>`;
+  // }
 }
 
 function renderSeries(series) {
