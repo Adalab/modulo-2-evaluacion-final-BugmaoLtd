@@ -10,30 +10,7 @@
 const searchBtn = document.querySelector(".js-searchBtn");
 const searchInput = document.querySelector(".js-searchInput");
 const seriesList = document.querySelector(".js-list");
-let favouriteSeriesList = document.querySelector(".js-favourite-series-list");
-
-function handleFavourites(event) {
-  const idSerie = event.currentTarget.id;
-  const favouriteSerie = event.currentTarget;
-
-  //No me trae el valor del id de series.mal_id ni series[mal_id]
-  // y por eso no funciona el find ni todo lo demás
-
-  const selectedSerie = allSeries.find((singleSerie) => {
-    return singleSerie.mal_id === idSerie;
-  });
-
-  let favouriteSeriesList = [];
-  favouriteSeriesList.push(selectedSerie);
-  // console.log(favouriteSeriesList);
-
-  // for (const favouriteSerie of favouriteSeriesList) {
-  //   favouriteSeriesList.innerHTML += ` <li class = "js-series" id="${series.mal_id}">
-  //   <img src="${serie.images.jpg.image_url}" alt="">
-  //   <h2>${series.title}</h2>
-  // </li>`;
-  // }
-}
+// let favouriteSeriesList = document.querySelector(".js-favourite-series-list");
 
 function renderSeries(series) {
   for (const serie of series) {
@@ -41,14 +18,14 @@ function renderSeries(series) {
       serie.images.jpg.image_url.src ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
-      seriesList.innerHTML += ` <li class = "js-series" id="${serie.mal_id}">
-    <img src="./images/logo-adalab.png" alt="">
-    <h2>${serie.title}</h2>
+      seriesList.innerHTML += ` <li class = "js-series serie" id="${serie.mal_id}">
+    <div class="container__serie"><img class="serie__image" src="./images/logo-adalab.png" alt="">
+    <h2 class="serie__title">${serie.title}</h2> </div>
   </li>`;
     } else {
-      seriesList.innerHTML += ` <li class = "js-series" id="${serie.mal_id}">
-      <img src="${serie.images.jpg.image_url}" alt="">
-      <h2>${serie.title}</h2>
+      seriesList.innerHTML += ` <li class = "js-series serie" id="${serie.mal_id}">
+      <div class="container__serie"><img class="serie__image" src="${serie.images.jpg.image_url}" alt="">
+      <h2 class="serie__title">${serie.title}</h2></div>
     </li>`;
     }
 
@@ -56,6 +33,29 @@ function renderSeries(series) {
     for (const singleSerie of allSeries) {
       singleSerie.addEventListener("click", handleFavourites);
     }
+  }
+}
+
+let favouriteSeriesList = [];
+
+function handleFavourites(event) {
+  const idSerieClick = event.currentTarget.id;
+  console.log(seriesList);
+
+  //No me trae el valor del id de series.mal_id ni series[mal_id]
+  // y por eso no funciona el find ni todo lo demás
+
+  const selectedSerie = seriesList.find((serie) => {
+    return serie.mal_id === idSerieClick;
+  });
+
+  favouriteSeriesList.push(selectedSerie);
+  // console.log(favouriteSeriesList);
+
+  for (const favouriteSerie of favouriteSeriesList) {
+    favouriteSeriesList.innerHTML += ` <li class = "js-series serie" id="${serie.mal_id}">
+      <div class="container__serie"><img class="serie__image" src="${serie.images.jpg.image_url}" alt="">
+      <h2 class="serie__title">${serie.title}</h2></div></li>`;
   }
 }
 

@@ -1,27 +1,26 @@
-<section>
-  <h3>Buscador de Series de Anime</h3>
+<section class="search">
+  <h3 class="search__title">Buscador de Series de Anime</h3>
   <input
-    class="js-searchInput"
+    class="search__input js-searchInput"
     type="text"
     name="SearchField"
     placeholder="Solo para Otakus"
     id=""
   />
-  <button class="js-searchBtn">Buscar</button>
+  <button class="search__button js-searchBtn">Buscar</button>
 </section>
 
 <div class="container">
-  <section>
-    <h2>Resultados de tu búsqueda</h2>
-    <ul class="js-list"></ul>
-  </section>
-
-  <aside class="hidden">
-    <ul class="js-favourite-series-list">
+  <aside class="container__aside hidden">
+    <ul class="js-favourite-series-list change">
       <!-- <li>
           <img src="" alt="" />
           <h2></h2>
         </li> -->
     </ul>
   </aside>
+  <section>
+    <h2>Resultados de tu búsqueda</h2>
+    <ul class="js-list serieslist"></ul>
+  </section>
 </div>
