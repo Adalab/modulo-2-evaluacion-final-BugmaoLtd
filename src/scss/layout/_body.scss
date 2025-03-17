@@ -50,7 +50,7 @@
 
 .serieslist{
 width: 70%;
-background-color: aquamarine;
+
 }
 
 .favourites{
@@ -61,6 +61,7 @@ background-color: aquamarine;
     width: 70vh;
     display: flex;
     flex-direction: column;
+    
 }
 
 .serie{
@@ -74,5 +75,10 @@ background-color: aquamarine;
 }
 
 .serie__image{
-    width: 300px;
+    width: 200px;
+}
+
+.changefavourite{
+    background-color: aquamarine;
+    color: blueviolet;
 }

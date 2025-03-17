@@ -1,125 +1,97 @@
-![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
+# Anime Series Favorites
 
-# Adalab web starter kit
+Este proyecto es una aplicación web que permite a los usuarios buscar series de anime, ver los resultados y agregar series a su lista de favoritos. Los favoritos se guardan de manera persistente utilizando `localStorage`, lo que permite que la lista de favoritos se mantenga incluso después de recargar la página.
 
-Ahoy! Este es nuestro Starter Kit creado en **node y vite**. ¿Y qué es un Starter kit? Pues es una **plantilla de proyecto con funcionalidades preinstaladas y preconfiguradas**.
+## Funcionalidades
 
-Este Kit incluye un motor de plantillas HTML, el preprocesador SASS y un servidor local y muchas cosas más. El Kit nos ayuda a trabajar más cómodamente, nos automatiza tareas.
+- **Búsqueda de series de anime:** Los usuarios pueden buscar series de anime utilizando el nombre de la serie. Los resultados se obtienen de la API de Jikan.
+- **Visualización de series:** Se muestran los resultados de la búsqueda con imágenes y títulos de las series.
+- **Agregar/Eliminar de favoritos:** Los usuarios pueden agregar series a su lista de favoritos y eliminar las que ya no deseen en su lista.
+- **Persistencia en `localStorage`:** La lista de favoritos se guarda en `localStorage`, por lo que permanece disponible después de recargar la página.
 
-En el Kit hay 3 tipos de ficheros y carpetas:
+## Tecnologías
 
-- Los ficheros que están sueltos en la raíz del repositorio, como vite.config.js, package.json... Son la configuración del proyecto y no necesitamos modificarlos (excepto este README.md, para describir tu proyecto).
-- La carpeta `src/`: son los ficheros de nuestra página web, como HTML, CSS, JS...
-- La carpeta `public/`, que tiene fichero estáticos como imágenes, fuentes, favicon, librerías de JavaScript antiguas (jQuery, ...)
-- Y la carpeta `docs/`, que es generada automáticamente cuando arrancamos el proyecto. El Kit lee los ficheros que hay dentro de `src/` y `public/`, los procesa y los genera dentro de `public/` y `docs/`.
+- **HTML5**
+- **CSS3** (Puedes usar cualquier framework de tu elección, como Bootstrap)
+- **JavaScript (Vanilla)** para la lógica de la aplicación
+- **API de Jikan:** API pública para obtener datos de series de anime.
 
-## Guía de inicio rápido
+## Instalación
 
-> **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/) con una versión superior a la 14 para trabajar con este Starter Kit:
+Para comenzar a usar el proyecto en tu máquina local, sigue estos pasos:
 
-### Pasos a seguir cada vez que queremos arrancar un proyecto desde cero:
+1. **Clona el repositorio:**
 
-1. **Crea tu propio repositorio.**
-1. Descarga este **Starter kit desde GitHub**.
-   - No recomendamos que clones este repo ya que no podrás añadir commits.
-1. **Copia todos los ficheros** de este Starter kit en la carpeta raíz de tu repositorio.
-   - Recuerda que debes copiar **también los ficheros ocultos** que comienzan por un punto.
-   - Si has decidido clonar este repo, no debes copiar la carpeta `.git`. Si lo haces estarás machacando tu propio repositorio.
-1. **Abre una terminal** en la carpeta raíz de tu repositorio.
-1. **Instala las dependencias** locales ejecutando en la terminal el comando:
+   Si aún no tienes el repositorio, clónalo usando Git:
 
-```bash
-npm install
-```
+   ```bash
+   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+   ```
 
-### Pasos para arrancar el proyecto:
+2. **Accede a la carpeta del proyecto:**
 
-Una vez hemos instalado las dependencias, vamos a arrancar el proyecto. **El proyecto hay que arrancarlo cada vez que te pongas a programar.** Para ello ejecuta el comando:
+   ```bash
+   cd nombre-del-repositorio
+   ```
 
-```bash
-npm run dev
-```
+3. **Abre el archivo HTML:**
 
-Este comando:
+   Abre el archivo `index.html` en tu navegador favorito.
 
-- **Abre una ventana de Chrome y muestra tu página web**, al igual que hace el plugin de VS Code Live Server (Go live).
-- También **observa** todos los ficheros que hay dentro de la carpeta `src/`, para que cada vez que modifiques un fichero **refresca tu página en Chrome**.
-- También **procesa los ficheros** HTML, SASS / CSS y JS. Por ejemplo:
-   - Convierte los ficheros SASS en CSS.
-   - Combina los diferentes ficheros de HTML y los agrupa en uno o varios ficheros HTML.
+   ```bash
+   open index.html  # en MacOS
+   start index.html # en Windows
+   xdg-open index.html # en Linux
+   ```
 
-Después de ejecutar `npm run dev` ya puedes empezar a editar todos los ficheros que están dentro de la carpeta `src/` y programar cómodamente.
+## Uso
 
-### Pasos para publicar el proyecto en GitHub Pages:
+1. **Buscar series:**
 
-Para generar tu página para producción ejecuta el comando:
+   - En la barra de búsqueda, ingresa el nombre de una serie de anime y presiona el botón de búsqueda.
+   - Se mostrarán los resultados de la búsqueda con las imágenes y los títulos de las series.
 
-```bash
-npm run build
-```
+2. **Agregar a favoritos:**
 
-Y a continuación:
+   - Haz clic en cualquier serie de la lista de resultados para agregarla a tu lista de favoritos.
+   - Las series seleccionadas aparecerán en la sección de favoritos en la parte superior o en un contenedor designado de la página.
 
-1. Sube a tu repo la carpeta `docs/` que se te acaba de generar.
-1. Entra en la pestaña `settings` de tu repo.
-1. Y en el apartado de GitHub Pages activa la opción **master branch /docs folder**.
-1. Y ya estaría!!!
+3. **Eliminar de favoritos:**
 
-Además, los comandos:
+   - Si ya has agregado una serie a tus favoritos, puedes eliminarla haciendo clic en la serie dentro de la lista de favoritos.
 
-```bash
-npm run push-docs
-```
-o
+4. **Recargar la página:**
+   - La lista de favoritos se guarda en el `localStorage`, por lo que aunque recargues la página, los favoritos permanecerán intactos.
 
-```bash
-npm run deploy
-```
+## Ejemplo de Uso
 
-son un atajo que nos genera la versión de producción y hace push de la carpeta `docs/` del tirón. Te recomendamos ver el fichero `package.json` para aprender cómo funciona.
-<!--
-## Flujo de archivos con Gulp
+1. Busca por ejemplo `Naruto` en el cuadro de búsqueda.
+2. Haz clic en la serie de la lista de resultados para agregarla a tus favoritos.
+3. Puedes eliminarla de los favoritos simplemente haciendo clic sobre ella nuevamente.
 
-Estas tareas de Gulp producen el siguiente flujo de archivos:
+## Capturas de Pantalla
 
-![Gulp flow](./gulp-flow.png)
+_(Aquí puedes agregar capturas de pantalla de la aplicación en acción)_
 
-## `gulpfile.js` y `config.json`
+## Contribuciones
 
-Nuestro **gulpfile.js** usa el fichero `config.json` de configuración con las rutas de los archivos a generar / observar.
+Si deseas contribuir a este proyecto, por favor sigue estos pasos:
 
-De esta manera separarmos las acciones que están en `gulpfile.js` de la configuración de las acciones que están en `config.json`.
--->
-## Estructura de carpetas
+1. Haz un fork de este repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Añadir nueva funcionalidad'`).
+4. Envía tus cambios al repositorio remoto (`git push origin feature/nueva-funcionalidad`).
+5. Crea un pull request.
 
-La estructura de carpetas tiene esta pinta:
+## Licencia
 
-```
-src
- ├─ api // los ficheros de esta carpeta se copian en public/api/
- |  └─ data.json
- ├─ images
- |  └─ logo.jpg
- ├─ js // los ficheros de esta carpeta se concatenan en el fichero main.js y este se guarda en public/main.js
- |  ├─ main.js
- |  └─ events.js
- ├─ scss
- |  ├─ components
- |  ├─ core
- |  ├─ layout
- |  └─ pages
- └─ html
-    └─ partials
-```
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
-> **NOTA:** Los partials de HTML y SASS del proyecto son orientativos. Te recomendamos usar los que quieras, y borrar los que no uses.
-<!--
-## Vídeotutoriales del Starter kit
+---
 
-- [Qué es, trabajar con la versión de desarrollo y rutas relativas](https://www.youtube.com/watch?v=XwvhXvBijos)
-- [Migración de un proyecto, trabajar con la versión de producción y GitHub Pages](https://www.youtube.com/watch?v=qqGClcgt9Uc)
-- [Motor de plantillas](https://www.youtube.com/watch?v=4GwXOJ045Zg)
--->
-## Falta algo?
+### Notas adicionales:
 
-Echas de menos que el kit haga algo en concreto? Pidelo sin problema a través de las issues o si te animas a mejorarlo mándanos un PR :)
+- Si tienes imágenes, puedes agregar una sección de capturas de pantalla para mostrar cómo luce la aplicación.
+- Puedes personalizar la parte de instalación y contribución según el flujo de trabajo de tu equipo.
+
+Este archivo `README.md` debería ser útil tanto para usuarios que quieran usar la aplicación como para desarrolladores que deseen contribuir al proyecto. ¡Espero que te sea de ayuda!

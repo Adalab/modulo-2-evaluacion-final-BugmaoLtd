@@ -53,6 +53,7 @@ function handleFavourites(event) {
 
   if (!favouriteSeries.includes(selectedSerie)) {
     favouriteSeries.push(selectedSerie);
+    event.currentTarget.classList.add("changefavourite");
   }
 
   renderFavourites();
