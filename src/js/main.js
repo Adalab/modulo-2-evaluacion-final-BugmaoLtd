@@ -6,6 +6,7 @@ const seriesList = document.querySelector(".js-list");
 const localStorageFavourites = JSON.parse(
   localStorage.getItem("favouriteList")
 );
+const resetBtn = document.querySelector(".js-resetBtn");
 let favouriteSeriesList = document.querySelector(".js-favourite-series-list");
 
 let series = [];
@@ -55,7 +56,6 @@ function handleFavourites(event) {
     favouriteSeries.push(selectedSerie);
     event.currentTarget.classList.add("changefavourite");
   }
-
   renderFavourites();
 }
 
@@ -73,6 +73,14 @@ function renderFavourites() {
   }
   localStorage.setItem("favouriteList", JSON.stringify(favouriteSeries));
 }
+
+resetBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  seriesList.innerHTML = "";
+  favouriteSeriesList.innerHTML = "";
+  favouriteSeries = [];
+  localStorage.removeItem("favouriteList");
+});
 
 const handleClick = (event) => {
   event.preventDefault();

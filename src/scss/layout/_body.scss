@@ -12,7 +12,7 @@
     padding-left: 30px;
     padding-right: 20px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 20px;
    }
 .search__input{
     width: 30%;
@@ -81,4 +81,15 @@ width: 70%;
 .changefavourite{
     background-color: aquamarine;
     color: blueviolet;
+}
+
+.reset__button{
+    background-color: orange;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 10%;
+    font-size: 16px;
 }
