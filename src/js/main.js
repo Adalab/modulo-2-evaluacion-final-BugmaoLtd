@@ -65,8 +65,8 @@ function renderFavourites() {
   for (const favouriteSerie of favouriteSeries) {
     favouriteSeriesList.innerHTML += `
       <li class="js-series serie" id="${favouriteSerie.mal_id}">
-        <div class="container__serie">
-          <img class="serie__image" src="${favouriteSerie.images.jpg.image_url}" alt="">
+        <div class="container__serie__fav">
+          <img class="serie__image__fav" src="${favouriteSerie.images.jpg.image_url}" alt="">
           <h2 class="serie__title">${favouriteSerie.title}</h2>
         </div>
       </li>`;
