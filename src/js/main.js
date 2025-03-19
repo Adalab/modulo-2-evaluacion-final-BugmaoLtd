@@ -39,6 +39,8 @@ function renderSeries(series) {
           </div>
         </li>`;
     }
+    const seriesNumber = series.length;
+    console.log(seriesNumber);
   }
 
   const allSeries = document.querySelectorAll(".js-series");
